@@ -4,22 +4,24 @@ function handleSubmit(ev)
 {
     ev.preventDefault()
     const f = ev.target
-    const heading = document.querySelector('h1')
-    heading.textContent = f.firstName.value+' '+f.secondName.value
+
+    
+
+    const newP = document.createElement('P')
+    const p = document.createTextNode('Fist Name : Last Name - '+f.firstName.value+' : '+f.secondName.value)
+
+    newP.appendChild(p);
+    document.body.appendChild(newP)
+    const body = document.querySelector('p')
 
     if(f.firstName.value.charAt(0)=='H')
     {
-        heading.style.color = "#00ff00"
+        newP.style.color = "blue"
     }
     else
     {
-        heading.style.color = "black"
+        newP.style.color = "black"
     }
-
-    const newP = document.createElement('P')
-    const p = document.createTextNode('Fist Name: '+f.firstName.value+'\nLast Name: '+f.secondName.value)
-    newP.appendChild(p);
-    document.body.appendChild(newP)
 }
 
 personForm.addEventListener('submit', handleSubmit)
