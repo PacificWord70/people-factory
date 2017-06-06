@@ -11,15 +11,18 @@ function handleSubmit(ev)
     //const lastName = f.secondName.value
     //const name = firstName+' '+lastName
     const details = document.querySelector('#details')
+    //const boldedName = document.createElement('strong')
+    //boldedName.textContent = name
 
-    const boldedName = document.createElement('strong')
-    boldedName.textContent = name
+    const colorDiv = `
+        <div style="background-color: ${favColor}; width: 100px; height: 50px;"></div>
+    `
 
     details.innerHTML += `
     <ul>
         <li>Name: ${name}</li>
+        <li>Fav Color: ${colorDiv}</li>
         <li>Age: ${age}</li>
-        <li>Fav Color: ${favColor}</li>
     </ul>
     `
 
