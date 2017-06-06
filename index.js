@@ -4,9 +4,13 @@ function handleSubmit(ev)
 {
     ev.preventDefault()
     const f = ev.target
+    const firstName = f.firstName.value
+    const lastName = f.secondName.value
 
-    
+    const details = document.querySelector('#details')
+    details.innerHTML += `<strong>${firstName}</strong>`
 
+/*
     const newP = document.createElement('P')
     const p = document.createTextNode('Fist Name : Last Name - '+f.firstName.value+' : '+f.secondName.value)
 
@@ -22,6 +26,7 @@ function handleSubmit(ev)
     {
         newP.style.color = "black"
     }
+*/
 }
 
 personForm.addEventListener('submit', handleSubmit)
