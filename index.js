@@ -4,9 +4,9 @@ function handleSubmit(ev)
 {
     ev.preventDefault()
     const f = ev.target
-    const firstName = f.firstName.value
-    const lastName = f.secondName.value
-    const name = firstName+' '+lastName
+    const name = f.firstName.value
+    //const lastName = f.secondName.value
+    //const name = firstName+' '+lastName
     const details = document.querySelector('#details')
 
     const boldedName = document.createElement('strong')
