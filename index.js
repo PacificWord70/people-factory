@@ -2,13 +2,23 @@ const personForm = document.querySelector('#personForm')
     const details = document.querySelector('#details')
 
 
+function renderColor(color)
+{
+    const div = document.createElement('div')
+    div.style.backgroundColor = color
+    div.style.width = '100px'
+    div.style.height = '50px'
+
+    return div
+}
+
 const newE = document.createElement('UL')
-function addToDoc(ee,desc,thing)
+function addToDoc(ee,thing)
 {
     const newEE = document.createElement(ee)
-    newEE.textContent=desc+': '+thing
-    //newE.appendChild(newEE)
-    details.appendChild(newEE)
+    newEE.innerHTML=`${thing}`
+    newE.appendChild(newEE)
+    details.appendChild(newE)
 }
 
 function handleSubmit(ev)
@@ -25,14 +35,12 @@ function handleSubmit(ev)
     //boldedName.textContent = name
     //details.appendChild(boldedName)
 
-    const colorDiv = `
-        <div style="background-color: ${favColor}; width: 100px; height: 50px;"></div>
-    `
 
-    //addToDoc('LI','Name',name)
-    //addToDoc('LI','Fav Color',favColor)
-    //addToDoc('LI','Age',age)
+    addToDoc('LI',`Name: ${name}`)
+    addToDoc('LI',`Fav Color: ${renderColor(favColor).outerHTML}`)
+    addToDoc('LI',`Age: ${age}`)
     
+    /*
     details.innerHTML=`
         <ul>
             <li>Name: ${name}</li>
@@ -40,6 +48,8 @@ function handleSubmit(ev)
             <li>Age: ${age}</li>
         </ul>
     `
+    */
+
 /*
     const newP = document.createElement('P')
     const p = document.createTextNode('Fist Name : Last Name - '+f.firstName.value+' : '+f.secondName.value)
