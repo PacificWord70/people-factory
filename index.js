@@ -29,10 +29,17 @@ function handleSubmit(ev)
         <div style="background-color: ${favColor}; width: 100px; height: 50px;"></div>
     `
 
-    addToDoc('LI','Name',name)
-    addToDoc('LI','Fav Color',favColor)
-    addToDoc('LI','Age',age)
-
+    //addToDoc('LI','Name',name)
+    //addToDoc('LI','Fav Color',favColor)
+    //addToDoc('LI','Age',age)
+    
+    details.innerHTML=`
+        <ul>
+            <li>Name: ${name}</li>
+            <li>Fav Color: ${colorDiv}</li>
+            <li>Age: ${age}</li>
+        </ul>
+    `
 /*
     const newP = document.createElement('P')
     const p = document.createTextNode('Fist Name : Last Name - '+f.firstName.value+' : '+f.secondName.value)
