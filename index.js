@@ -5,6 +5,9 @@ function handleSubmit(ev)
     ev.preventDefault()
     const f = ev.target
     const name = f.firstName.value
+    const favColor = f.favColor.value
+    const age = f.age.value
+
     //const lastName = f.secondName.value
     //const name = firstName+' '+lastName
     const details = document.querySelector('#details')
@@ -12,9 +15,14 @@ function handleSubmit(ev)
     const boldedName = document.createElement('strong')
     boldedName.textContent = name
 
-    details.innerHTML += boldedName
+    details.innerHTML += `
+    <ul>
+        <li>Name: ${name}</li>
+        <li>Age: ${age}</li>
+        <li>Fav Color: ${favColor}</li>
+    </ul>
+    `
 
-    details.appendChild(boldedName)
 
 /*
     const newP = document.createElement('P')
