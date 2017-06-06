@@ -6,9 +6,15 @@ function handleSubmit(ev)
     const f = ev.target
     const firstName = f.firstName.value
     const lastName = f.secondName.value
-
+    const name = firstName+' '+lastName
     const details = document.querySelector('#details')
-    details.innerHTML += `<strong>${firstName}</strong>`
+
+    const boldedName = document.createElement('strong')
+    boldedName.textContent = name
+
+    details.innerHTML += boldedName
+
+    details.appendChild(boldedName)
 
 /*
     const newP = document.createElement('P')
