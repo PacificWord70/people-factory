@@ -1,4 +1,15 @@
 const personForm = document.querySelector('#personForm')
+    const details = document.querySelector('#details')
+
+
+const newE = document.createElement('UL')
+function addToDoc(ee,desc,thing)
+{
+    const newEE = document.createElement(ee)
+    newEE.textContent=desc+': '+thing
+    //newE.appendChild(newEE)
+    details.appendChild(newEE)
+}
 
 function handleSubmit(ev)
 {
@@ -10,22 +21,17 @@ function handleSubmit(ev)
 
     //const lastName = f.secondName.value
     //const name = firstName+' '+lastName
-    const details = document.querySelector('#details')
     //const boldedName = document.createElement('strong')
     //boldedName.textContent = name
+    //details.appendChild(boldedName)
 
     const colorDiv = `
         <div style="background-color: ${favColor}; width: 100px; height: 50px;"></div>
     `
 
-    details.innerHTML += `
-    <ul>
-        <li>Name: ${name}</li>
-        <li>Fav Color: ${colorDiv}</li>
-        <li>Age: ${age}</li>
-    </ul>
-    `
-
+    addToDoc('LI','Name',name)
+    addToDoc('LI','Fav Color',favColor)
+    addToDoc('LI','Age',age)
 
 /*
     const newP = document.createElement('P')
